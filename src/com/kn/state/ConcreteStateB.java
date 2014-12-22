@@ -8,7 +8,7 @@ public class ConcreteStateB implements State {
 	@Override
 	public void handle(Context context) {
 		System.out.println("Current state is " + msg + ", the state will be changed.");  
-        context.setState(new ConcreteStateB()); 
+        context.setState(new ConcreteStateA()); 
 	}
 
 }

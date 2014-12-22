@@ -7,7 +7,11 @@ public class Context {
 	
 	public Context(ConcreteStateA s) {  
         setState(s);  
-    }  
+    } 
+	
+	public Context(ConcreteStateB s) {  
+        setState(s);  
+    } 
   
     public State getState() {  
         return state;  
