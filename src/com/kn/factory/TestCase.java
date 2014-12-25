@@ -2,46 +2,38 @@ package com.kn.factory;
 
 import org.junit.Test;
 
-public class TestCase {
+import com.kn.factory.Constant.DBTYPE;
 
-	IFactory f;
+public class TestCase {
+	
+	IFactory factory = null;
 	
 	@Test
-	public void test1() {
-		IFactory f = new OracleDaoFactory();
-		UserDao userDao = f.createUserDao();
+	public void test0() {
+//		factory = DBFactory.createDBFactory(DBTYPE.Oracle);
+//		factory = DBFactory.createDBFactory(DBTYPE.MySQL);
+		factory = DBFactory.createDBFactory(DBTYPE.DB2);
+		IUserDao userDao = factory.createUserDao();
 		userDao.insert(new User());
-		userDao.deleteById("oracle");
+		userDao.deleteById("test");
 		
-		DeptDao deptDao = f.createDeptDao();
+		IDeptDao deptDao = factory.createDeptDao();
 		deptDao.insert(new Dept());
-		deptDao.deleteById("oracle");
+		deptDao.deleteById("test");
 		System.out.println();
 	}
 	
-	@Test
-	public void test2() {
-		IFactory f = new DB2DaoFactory();
-		UserDao userDao = f.createUserDao();
-		userDao.insert(new User());
-		userDao.deleteById("DB2");
-		
-		DeptDao deptDao = f.createDeptDao();
-		deptDao.insert(new Dept());
-		deptDao.deleteById("DB2");
-		System.out.println();
-	}
-	
-	@Test
-	public void test3() {
-		IFactory f = new MySQLDaoFactory();
-		UserDao userDao = f.createUserDao();
-		userDao.insert(new User());
-		userDao.deleteById("MySQL");
-		
-		DeptDao deptDao = f.createDeptDao();
-		deptDao.insert(new Dept());
-		deptDao.deleteById("MySQL");
-		System.out.println();
-	}
+//	@Test
+//	public void test1() {
+//		DBType type = new DBType();
+//		type.setDbName("MySql");
+//		
+//		factory = DBFactory.createDBFactory(type);
+//		factory.createUserDao();
+//		
+//		IUserDao ud0 = new UserDaoImpl(type);
+//		
+//		ud0.deleteById("test");
+//		ud0.insert(null);
+//	}
 }

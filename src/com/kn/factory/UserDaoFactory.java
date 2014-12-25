@@ -2,7 +2,7 @@ package com.kn.factory;
 
 public class UserDaoFactory {
 
-	public static UserDao createUserDao(String type) {
+	public static IUserDao createUserDao(String type) {
 		if ("ORACLE".equals(type)) {
 			return new UserOracleDao();
 		}

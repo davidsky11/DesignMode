@@ -1,6 +1,6 @@
 package com.kn.factory;
 
-public class UserMySQLDao implements UserDao {
+public class UserMySQLDao implements IUserDao {
 
 	@Override
 	public void insert(User u) {

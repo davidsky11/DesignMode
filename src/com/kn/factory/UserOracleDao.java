@@ -1,6 +1,6 @@
 package com.kn.factory;
 
-public class UserOracleDao implements UserDao {
+public class UserOracleDao implements IUserDao {
 
 	@Override
 	public void insert(User u) {

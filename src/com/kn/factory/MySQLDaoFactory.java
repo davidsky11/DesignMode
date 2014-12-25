@@ -3,12 +3,12 @@ package com.kn.factory;
 public class MySQLDaoFactory implements IFactory {
 
 	@Override
-	public UserDao createUserDao() {
+	public IUserDao createUserDao() {
 		return new UserMySQLDao();
 	}
-
+	
 	@Override
-	public DeptDao createDeptDao() {
+	public IDeptDao createDeptDao() {
 		return new DeptMySQLDao();
 	}
 

@@ -1,6 +1,6 @@
 package com.kn.factory;
 
-public interface DeptDao {
+public interface IDeptDao {
 
 	public void insert(Dept u);
 	

@@ -1,6 +1,6 @@
 package com.kn.factory;
 
-public class DeptDB2Dao implements DeptDao {
+public class DeptDB2Dao implements IDeptDao {
 
 	@Override
 	public void insert(Dept d) {

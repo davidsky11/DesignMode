@@ -1,6 +1,6 @@
 package com.kn.factory;
 
-public class DeptMySQLDao implements DeptDao {
+public class DeptMySQLDao implements IDeptDao {
 
 	@Override
 	public void insert(Dept u) {

@@ -1,7 +1,7 @@
 package com.kn.factory;
 
 // dao接口
-public interface UserDao {
+public interface IUserDao {
 
 	public void insert(User u);
 	

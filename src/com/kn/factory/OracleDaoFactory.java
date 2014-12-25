@@ -2,11 +2,11 @@ package com.kn.factory;
 
 public class OracleDaoFactory implements IFactory {
 
-	public UserDao createUserDao() {
+	public IUserDao createUserDao() {
 		return new UserOracleDao();
 	}
 
-	public DeptDao createDeptDao() {
+	public IDeptDao createDeptDao() {
 		return new DeptOracleDao();
 	}
 }

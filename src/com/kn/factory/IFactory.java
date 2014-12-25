@@ -2,8 +2,8 @@ package com.kn.factory;
 
 public interface IFactory {
 
-	public UserDao createUserDao();
+	public IUserDao createUserDao();
 	
-	public DeptDao createDeptDao();
+	public IDeptDao createDeptDao();
 	
 }

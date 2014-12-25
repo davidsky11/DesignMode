@@ -2,11 +2,11 @@ package com.kn.factory;
 
 public class DB2DaoFactory implements IFactory {
 
-	public UserDao createUserDao() {
+	public IUserDao createUserDao() {
 		return new UserDB2Dao();
 	}
 
-	public DeptDao createDeptDao() {
+	public IDeptDao createDeptDao() {
 		return new DeptDB2Dao();
 	}
 }
