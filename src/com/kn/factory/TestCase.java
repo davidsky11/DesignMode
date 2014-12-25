@@ -4,16 +4,19 @@ import org.junit.Test;
 
 public class TestCase {
 
+	IFactory f;
+	
 	@Test
 	public void test1() {
 		IFactory f = new OracleDaoFactory();
 		UserDao userDao = f.createUserDao();
 		userDao.insert(new User());
-		userDao.deleteById("123");
+		userDao.deleteById("oracle");
 		
 		DeptDao deptDao = f.createDeptDao();
 		deptDao.insert(new Dept());
-		deptDao.deleteById("234");
+		deptDao.deleteById("oracle");
+		System.out.println();
 	}
 	
 	@Test
@@ -21,10 +24,24 @@ public class TestCase {
 		IFactory f = new DB2DaoFactory();
 		UserDao userDao = f.createUserDao();
 		userDao.insert(new User());
-		userDao.deleteById("123");
+		userDao.deleteById("DB2");
 		
 		DeptDao deptDao = f.createDeptDao();
 		deptDao.insert(new Dept());
-		deptDao.deleteById("234");
+		deptDao.deleteById("DB2");
+		System.out.println();
+	}
+	
+	@Test
+	public void test3() {
+		IFactory f = new MySQLDaoFactory();
+		UserDao userDao = f.createUserDao();
+		userDao.insert(new User());
+		userDao.deleteById("MySQL");
+		
+		DeptDao deptDao = f.createDeptDao();
+		deptDao.insert(new Dept());
+		deptDao.deleteById("MySQL");
+		System.out.println();
 	}
 }

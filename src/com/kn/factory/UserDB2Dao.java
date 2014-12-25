@@ -9,7 +9,7 @@ public class UserDB2Dao implements UserDao {
 
 	@Override
 	public void deleteById(String id) {
-		 System.out.println("delete an user in DB2 db."); 
+		System.out.println("delete an user with id '" + id + "' in DB2 db.");  
 	}
 
 }
