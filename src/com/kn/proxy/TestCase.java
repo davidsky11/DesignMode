@@ -32,4 +32,17 @@ public class TestCase {
 		Subject s = (Subject) o;
 		s.request();
 	}
+	
+	@Test
+	public void test2() {
+		RealSubject rs = new RealSubject();
+		
+		DynamicProxy proxy = new DynamicProxy(rs);
+		
+		Subject s0 = (Subject) proxy.getProxy();
+		s0.request();
+		
+		Subject1 s1 = (Subject1) proxy.getProxy();
+		s1.request1();
+	}
 }

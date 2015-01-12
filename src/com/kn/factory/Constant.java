@@ -2,12 +2,12 @@ package com.kn.factory;
 
 public class Constant {
 	
-	public enum DBType {
+	/*public enum DBType {
 		MySQL,
 		Oracle,
 		DB2,
 		MongoDB,
-	};
+	};*/
 	
 	interface DBTYPE {
 		int MySQL = 1;
