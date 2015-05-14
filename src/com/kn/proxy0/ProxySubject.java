@@ -1,4 +1,4 @@
-package com.kn.proxy;
+package com.kn.proxy0;
 
 // 代理类
 public class ProxySubject implements Subject {
