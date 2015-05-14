@@ -15,7 +15,7 @@ public class TestCase {
 	 */
 	@Test
 	public void test1() {
-		CglibProxy proxy = new CglibProxy();
+		ClassMethodInterceptor proxy = new ClassMethodInterceptor();
 		RealSubject real = (RealSubject) proxy.getProxy(RealSubject.class);
 		
 		real.request();

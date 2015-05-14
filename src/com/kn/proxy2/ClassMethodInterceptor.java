@@ -22,7 +22,7 @@ import net.sf.cglib.proxy.NoOp;
  * @author kevin
  * @version 1.1
  */
-public class CglibProxy implements MethodInterceptor /* 方法拦截类 */ {
+public class ClassMethodInterceptor implements MethodInterceptor /* 方法拦截类 */ {
 
 	private Enhancer enhancer = new Enhancer();			// 增强类
 	
