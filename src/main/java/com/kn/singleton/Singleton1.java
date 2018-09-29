@@ -1,5 +1,8 @@
 package com.kn.singleton;
 
+import java.io.ObjectStreamException;
+import java.io.Serializable;
+
 /**
  * Description:
  *      饿汉模式（立即加载方式，线程安全）
@@ -11,11 +14,16 @@ package com.kn.singleton;
  * @author kevin
  *
  */
-public class Singleton1 {
+public class Singleton1 implements Serializable {
 
     public static int STATUS = 1;
 	
-	private Singleton1() {}
+	private Singleton1() {
+	    // 防止反射构造实例
+	    if (null != instance) {
+	        throw new RuntimeException("不能直接调用私有构造器");
+        }
+    }
 
 	// 方法1：静态常量实现
 	private static Singleton1 instance = new Singleton1();
@@ -28,4 +36,9 @@ public class Singleton1 {
 	public static Singleton1 getInstance() {
 		return instance;
 	}
+
+	// 防止反序列化，如果定义了readResolve()，则直接返回此方法指定的对象，而不是新建实例
+    private Object readResolve() throws ObjectStreamException {
+	    return instance;
+    }
 }
